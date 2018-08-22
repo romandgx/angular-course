@@ -1,0 +1,9 @@
+<div>
+    <input type="button" value="get users" (click)="getData('/api')" /> | <input type="button" value="clear users" (click)="clear()" />
+</div>
+<hr>
+<div>
+    <ul *ngFor="let user of users">
+        <li>{{user}}</li>
+    </ul>
+</div>
