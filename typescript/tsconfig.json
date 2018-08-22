@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"noImplicitAny": true,
+		"removeComments": true,
+		"experimentalDecorators": true,
+		"sourceMap": true,
+		"rootDir": "./src",
+		"outDir": "./build",
+		"target": "es2015"
+	}
+}
