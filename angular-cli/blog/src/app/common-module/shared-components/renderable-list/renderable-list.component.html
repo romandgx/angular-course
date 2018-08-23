@@ -1,9 +1,9 @@
 <div>
-    <input type="button" value="get users" (click)="getData('/api')" /> | <input type="button" value="clear users" (click)="clear()" />
+    <input type="button" value="get users" (click)="getData('/api')" /> | <input type="button" value="clear users" (click)="list = []" />
 </div>
 <hr>
 <div>
-    <ul *ngFor="let user of users">
-        <li>{{user}}</li>
+    <ul *ngFor="let user of list">
+        <li>{{user.name.title}} {{user.name.first}} {{user.name.last}} {{user.email}} {{user.phone}} {{user.picture.medium}}</li>
     </ul>
 </div>
