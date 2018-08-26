@@ -1,0 +1,7 @@
+{
+    "/api": {
+        "target": "https://randomuser.me/",
+        "changeOrigin": true,
+        "secure": false
+    }
+}
