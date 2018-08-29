@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { UsersGeneratorComponent } from './components/users-generator/users-generator.component';
 import { UserViewComponent } from './components/user-view/user-view.component';
+import { DateFormatPipe } from './pipes/date-format.pipe';
 
 @NgModule({
   imports: [
@@ -10,7 +11,8 @@ import { UserViewComponent } from './components/user-view/user-view.component';
   ],
   declarations: [
     UsersGeneratorComponent,
-    UserViewComponent
+    UserViewComponent,
+    DateFormatPipe
   ],
   exports: [UsersGeneratorComponent]
 })

@@ -4,6 +4,7 @@
         <div>{{ user.name.title }} {{ user.name.first }} {{ user.name.last }}</div>
         <div>{{ user.email }}</div>
         <div>{{ user.phone }}</div>
+        <div>{{ user.dob.date | dateFormat: "DD-MM-YYYY HH:mm" }}</div>
         <div><button class="btn btn-primary" (click)="deleteUser(user.id.value)">delete</button></div>
     </div>
 </div>
