@@ -13,10 +13,13 @@ export class UsersGeneratorComponent {
 
   public list: Array<any> = [];
   public isLoading = true;
+  public isGetData: boolean;
 
   constructor(private usersService: UsersService) {}
 
   getData(url: string) {
+    if (!this.isGetData) return;
+
     this.usersService.getUsers(url)
     .then(
       response => response.json(),
@@ -35,6 +38,10 @@ export class UsersGeneratorComponent {
         }
       }
     );
+  }
+
+  isConfirm(value: boolean): void {
+    this.isGetData = value;
   }
 
   userDelete(id: any) {

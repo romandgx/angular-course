@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" [disabled]="!isLoading" (click)="getData('/api')">get users</button>
+<button type="button" class="btn btn-primary" [disabled]="!isLoading" (click)="getData('/api')" appConfirmGetData [message]="'are you shure?'" (onConfirm)="isConfirm($event)">get users</button>
 <hr>
 <div *ngFor="let user of list">
     <app-user-view [user]="user" (onUserDelete)="userDelete($event)"></app-user-view>

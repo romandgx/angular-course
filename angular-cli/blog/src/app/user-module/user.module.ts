@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { UsersGeneratorComponent } from './components/users-generator/users-generator.component';
 import { UserViewComponent } from './components/user-view/user-view.component';
 import { DateFormatPipe } from './pipes/date-format.pipe';
+import { ConfirmGetDataDirective } from './directives/confirm-get-data.directive';
+import { ChangeImageDirective } from './directives/change-image.directive';
 
 @NgModule({
   imports: [
@@ -12,7 +14,9 @@ import { DateFormatPipe } from './pipes/date-format.pipe';
   declarations: [
     UsersGeneratorComponent,
     UserViewComponent,
-    DateFormatPipe
+    DateFormatPipe,
+    ConfirmGetDataDirective,
+    ChangeImageDirective,
   ],
   exports: [UsersGeneratorComponent]
 })

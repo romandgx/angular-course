@@ -6,8 +6,8 @@ import * as moment from 'moment';
 })
 export class DateFormatPipe implements PipeTransform {
 
-  transform(date: moment.Moment, dateFormat: string): string {
-    return !date ? '' : (moment().utc(date).format(dateFormat));
+  transform(date: string | moment.Moment, dateFormat: string): string {
+    return !date ? '' : (moment().utc().format(dateFormat));
   }
 
 }
