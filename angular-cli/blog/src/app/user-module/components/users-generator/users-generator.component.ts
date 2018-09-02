@@ -21,14 +21,8 @@ export class UsersGeneratorComponent {
     if (!this.isGetData) return;
 
     this.usersService.getUsers(url)
-    .then(
-      response => response.json(),
-      error => console.error(error)
-    )
-    .then(
-      response => {
+      .subscribe(response => {
         let data = response.results[0];
-        console.log(data);
         this.isLoading = false;
         if (data.dob.age > (2018 - 1975)) {
           this.list.push(data);
@@ -36,8 +30,7 @@ export class UsersGeneratorComponent {
         } else {
           this.isLoading = true;
         }
-      }
-    );
+    });
   }
 
   isConfirm(value: boolean): void {

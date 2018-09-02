@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { UsersGeneratorComponent } from './components/users-generator/users-generator.component';
 import { UserViewComponent } from './components/user-view/user-view.component';
@@ -9,7 +10,8 @@ import { ChangeImageDirective } from './directives/change-image.directive';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   declarations: [
     UsersGeneratorComponent,
