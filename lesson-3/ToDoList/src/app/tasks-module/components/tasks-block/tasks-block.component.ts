@@ -18,9 +18,8 @@ export class TasksBlockComponent implements OnInit, DoCheck {
   ngDoCheck() {
     for (let item in localStorage) {
       if (item.match(/task_([0-9])+/)) {
-        let task = localStorage.getItem(item);
-        task = JSON.parse(task);
-        if (task.status == 'open' ) {
+        let task = JSON.parse(localStorage.getItem(item));
+        if (task.status === 'open' ) {
           this.editTasksList.add(task);
         }
 
