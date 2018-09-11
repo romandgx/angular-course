@@ -6,18 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TasksModule } from './tasks-module/tasks.module';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { TodoItemsService } from './tasks-module/services/todo-items.service';
+import { TodosService } from './tasks-module/services/todos.service';
 
-export const loadTasks = (todoItemsService: TodoItemsService) => {
-  return () => {
-    todoItemsService.getTodos().subscribe(
-      data => {
-        for (let task of data.tasks) {
-         localStorage.setItem(`task_${task.id}`, JSON.stringify(task));
-        }
-      }
-    );
-  };
+export const loadTasks = (todosService: TodosService) => {
+  return () => todosService.initService();
 };
 
 @NgModule({
@@ -32,11 +24,11 @@ export const loadTasks = (todoItemsService: TodoItemsService) => {
     HttpClientModule
   ],
   providers: [
-    TodoItemsService,
+    TodosService,
     {
       provide: APP_INITIALIZER,
       useFactory: loadTasks,
-      deps: [TodoItemsService],
+      deps: [TodosService],
       multi: true
     }
   ],

@@ -1,5 +1,5 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
-import { TodoItemsService } from '../../services/todo-items.service';
+import { TodosService } from '../../services/todos.service';
 
 @Component({
   selector: 'app-tasks-block',
